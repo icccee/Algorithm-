@@ -10,13 +10,13 @@ class Stack:
 		self.stack.insert(0,item)
 	
 	def pop(self):
-		if len(self.stack) != 0:
+		if not self.isEmpty():
 			self.stack.pop(0)
 		else:
 			print("Empty stack")
 
 	def peek(self):
-		if len(self.stack) != 0:
+		if not self.isEmpty():
 			return self.stack[0]
 		else:
 			print("Empty stack")
@@ -24,8 +24,14 @@ class Stack:
 	def size(self):
 		return len(self.stack)
 
+	def isEmpty(self):
+		if self.size() == 0:
+			return True
+		else:
+			return False
+
 	def printStack(self):
-		if len(self.stack) != 0:
+		if not self.isEmpty():
 			for i in self.stack:
 				print(i)
 		else:
@@ -33,7 +39,7 @@ class Stack:
 
 
 
-
+"""
 aStack = Stack()
 
 aStack.printStack()
@@ -51,3 +57,4 @@ while aStack.size() > 0:
 	aStack.pop()
 
 aStack.printStack()
+"""
